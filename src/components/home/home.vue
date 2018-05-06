@@ -1,13 +1,19 @@
 <template>
-  <div>home</div>
+  <div>
+    <v-header></v-header>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
+import Header from './components/header'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    'v-header': Header
+  }
 }
 </script>
 
-<!--<style lang="stylus" rel="stylesheet/stylus">-->
 <style>
 </style>
