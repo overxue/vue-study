@@ -16,7 +16,10 @@ export default {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true
+        loop: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false,
+        speed: 300
       },
       swiperList: [
         {'id': '0001', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1804/c4/1cdd28811593b802.jpg_750x200_5fbb7c91.jpg'},

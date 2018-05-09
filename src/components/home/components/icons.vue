@@ -26,8 +26,7 @@ export default {
         {'id': '0005', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png', 'desc': '动植物园'},
         {'id': '0006', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png', 'desc': '故宫'},
         {'id': '0007', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png', 'desc': '古北水镇'},
-        {'id': '0008', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png', 'desc': 'Q+精选'},
-        {'id': '0009', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png', 'desc': 'Q+精选'}
+        {'id': '0008', 'imgUrl': 'http://img1.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png', 'desc': 'Q+精选'}
       ]
     }
   },
@@ -54,33 +53,35 @@ export default {
   .icons >>> .swiper-container
     height: 0
     padding-bottom: 50%
-  .icon
-    position: relative
-    overflow: hidden
-    float: left
-    width: 25%
-    height: 0
-    padding-bottom: 25%
-    .icon-img
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: .44rem
-      box-sizing: border-box
-      padding: .1rem
-      .icon-image
-        display: block
-        margin: 0 auto
-        height: 100%
-    .icon-desc
-      position: absolute
-      left: 0
-      right: 0
-      bottom: 0
-      height: .44rem
-      line-height: .44rem
-      text-align: center
-      color: $darkTextColor
-      ellipsis()
+  .icons
+    margin-top: .1rem
+    .icon
+      position: relative
+      overflow: hidden
+      float: left
+      width: 25%
+      height: 0
+      padding-bottom: 25%
+      .icon-img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: .44rem
+        box-sizing: border-box
+        padding: .1rem
+        .icon-image
+          display: block
+          margin: 0 auto
+          height: 100%
+      .icon-desc
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: .44rem
+        line-height: .44rem
+        text-align: center
+        color: $darkTextColor
+        ellipsis()
 </style>
