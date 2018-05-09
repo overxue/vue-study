@@ -4,6 +4,7 @@
     <header-swiper></header-swiper>
     <home-icons></home-icons>
     <recommend></recommend>
+    <wekkend></wekkend>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from './components/header'
 import HeaderSwiper from './components/HeaderSwiper'
 import HomeIcons from './components/icons'
 import Recommend from './components/recommend'
+import Wekkend from './components/weekend'
 
 export default {
   name: 'Home',
@@ -19,7 +21,8 @@ export default {
     'v-header': Header,
     HeaderSwiper,
     HomeIcons,
-    Recommend
+    Recommend,
+    Wekkend
   }
 }
 </script>
