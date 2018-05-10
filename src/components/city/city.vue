@@ -1,19 +1,25 @@
 <template>
     <div>
-      <v-header></v-header>
+      <s-header></s-header>
       <search></search>
+      <list></list>
+      <alphabet></alphabet>
     </div>
 </template>
 
 <script>
-import Header from './components/header'
+import SerachHeader from './components/sheader'
 import Search from './components/search'
+import List from './components/list'
+import Alphabet from './components/alphabet'
 
 export default {
   name: 'City',
   components: {
-    'v-header': Header,
-    Search
+    's-header': SerachHeader,
+    Search,
+    List,
+    Alphabet
   }
 }
 </script>
