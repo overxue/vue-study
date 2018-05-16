@@ -1,6 +1,6 @@
 <template>
     <div>
-      <banner></banner>
+      <banner :sightName="sightName" :bannerImg="bannerImg" :bannerImgs="gallaryImgs"></banner>
       <v-header></v-header>
       <div class="content">
         <list :list="list"></list>
@@ -12,9 +12,31 @@
 import Banner from './components/banner'
 import vHeader from './components/vheader'
 import List from './components/list'
+import axios from 'axios'
 
 export default {
   name: 'Detail',
+  methods: {
+    getDetailInfo () {
+      axios.get('api/detail.json', {
+        params: {
+          id: this.$route.params.id
+        }
+      }).then((res) => {
+        res = res.data
+        if (res.ret && res.data) {
+          const data = res.data
+          this.sightName = data.sightName
+          this.bannerImg = data.bannerImg
+          this.gallaryImgs = data.gallaryImgs
+          this.list = data.categoryList
+        }
+      })
+    }
+  },
+  mounted () {
+    this.getDetailInfo()
+  },
   components: {
     Banner,
     vHeader,
@@ -22,23 +44,10 @@ export default {
   },
   data () {
     return {
-      list: [{
-        title: '成人票',
-        children: [{
-          'title': '成人三馆联票',
-          children: [{
-            'title': '三级'
-          }]
-        }, {
-          'title': '成人五馆联票'
-        }]
-      }, {
-        title: '学生票'
-      }, {
-        title: '儿童票'
-      }, {
-        title: '特惠票'
-      }]
+      sightName: '',
+      bannerImg: '',
+      gallaryImgs: [],
+      list: []
     }
   }
 }
