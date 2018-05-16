@@ -36,8 +36,13 @@ export default {
       }
     }
   },
+  // 进去页面就执行
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 离开页面执行
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
