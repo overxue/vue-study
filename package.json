@@ -14,7 +14,8 @@
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "fastclick": "^1.0.6",
-    "vue-jsonp": "^0.1.8"
+    "vue-jsonp": "^0.1.8",
+    "better-scroll": "^1.11.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
