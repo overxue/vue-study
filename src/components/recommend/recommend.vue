@@ -55,5 +55,6 @@ export default {
     /*top: 88px*/
     .recommend-content
       .slider-wrapper
+        position: relative
         width: 100%
 </style>

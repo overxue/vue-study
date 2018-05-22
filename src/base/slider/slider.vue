@@ -3,7 +3,9 @@
     <div class="slider-group" ref="sliderGroup">
       <slot></slot>
     </div>
-    <div class="dots"></div>
+    <div class="dots">
+      <span class="dot" v-for="(item, index) in dots" :class="{active:currentPageIndex === index}" :key="index"></span>
+    </div>
   </div>
 </template>
 
@@ -12,6 +14,12 @@ import BScroll from 'better-scroll'
 import {addClass} from 'common/js/dom'
 
 export default {
+  data () {
+    return {
+      dots: [],
+      currentPageIndex: 0
+    }
+  },
   props: {
     // 循环轮播
     loop: {
@@ -32,11 +40,24 @@ export default {
   mounted () {
     setTimeout(() => {
       this._setSliderWidth()
+      this._initDots()
       this._initSlider()
+
+      if (this.autoPlay) {
+        this._play()
+      }
     }, 20)
+
+    window.addEventListener('resize', () => {
+      if (!this.slider) {
+        return
+      }
+      this._setSliderWidth(true)
+      this.slider.refresh()
+    })
   },
   methods: {
-    _setSliderWidth () {
+    _setSliderWidth (isResize) {
       this.children = this.$refs.sliderGroup.children
       let width = 0
       let sliderWidth = this.$refs.slider.clientWidth
@@ -46,7 +67,7 @@ export default {
         child.style.width = sliderWidth + 'px'
         width += sliderWidth
       }
-      if (this.loop) {
+      if (this.loop && !isResize) {
         width += 2 * sliderWidth
       }
       this.$refs.sliderGroup.style.width = width + 'px'
@@ -56,12 +77,31 @@ export default {
         scrollX: true,
         scrollY: false,
         momentum: false,
-        snap: true,
-        snapLoop: this.loop,
-        snapThreshold: 0.3,
-        snapSpeed: 400,
+        snap: {
+          loop: this.loop,
+          threshold: 0.3,
+          speed: 400
+        },
+        bounce: false,
         click: true
       })
+
+      this.slider.on('scrollEnd', () => {
+        let pageIndex = this.slider.getCurrentPage().pageX
+        this.currentPageIndex = pageIndex
+        if (this.autoPlay) {
+          this._play()
+        }
+      })
+    },
+    _initDots () {
+      this.dots = new Array(this.children.length)
+    },
+    _play () {
+      clearTimeout(this.timer)
+      this.timer = setTimeout(() => {
+        this.slider.next()
+      }, this.interval)
     }
   }
 }
@@ -70,9 +110,11 @@ export default {
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/variable"
   .slider
+    min-height: 1px
     .slider-group
       position: relative
       overflow: hidden
+      white-space: nowrap
       .slider-item
         float: left
         box-sizing: border-box
@@ -86,4 +128,22 @@ export default {
         img
           display: block
           width: 100%
+    .dots
+      position: absolute
+      right: 0
+      left: 0
+      bottom: 12px
+      text-align: center
+      font-size: 0
+      .dot
+        display: inline-block
+        margin: 0 4px
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        background: $color-text-l
+        &.active
+          width: 20px
+          border-radius: 5px
+          background: $color-text-ll
 </style>
