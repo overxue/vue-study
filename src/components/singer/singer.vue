@@ -1,6 +1,6 @@
 <template>
   <div class="singer">
-    singer
+    <list-view :data="singers"></list-view>
   </div>
 </template>
 
@@ -8,6 +8,7 @@
 import {getSingerList} from 'api/singer'
 import {ERR_OK} from 'api/config'
 import Singer from 'common/js/singer'
+import ListView from 'base/listview/listview'
 
 const HOT_SINGER_LEN = 10
 const HOT_NAME = '热门'
@@ -39,8 +40,8 @@ export default {
       list.forEach((item, index) => {
         if (index < HOT_SINGER_LEN) {
           map.hot.items.push(new Singer({
-            id: item.Fsinger_id,
-            name: item.Fsinger_name
+            name: item.Fsinger_name,
+            id: item.Fsinger_mid
           }))
         }
         const key = item.Findex
@@ -51,8 +52,8 @@ export default {
           }
         }
         map[key].items.push(new Singer({
-          id: item.Fsinger_id,
-          name: item.Fsinger_name
+          name: item.Fsinger_name,
+          id: item.Fsinger_mid
         }))
       })
       // 为了得到有序列表，我们需要处理 map
@@ -71,6 +72,9 @@ export default {
       })
       return hot.concat(ret)
     }
+  },
+  components: {
+    ListView
   }
 }
 </script>
