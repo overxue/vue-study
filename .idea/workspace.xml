@@ -4,8 +4,6 @@
     <list default="true" id="d86a7cba-1080-4f54-a225-5769883bf208" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/base/listview/listview.vue" afterPath="$PROJECT_DIR$/src/base/listview/listview.vue" />
-      <change beforePath="$PROJECT_DIR$/src/base/scroll/scroll.vue" afterPath="$PROJECT_DIR$/src/base/scroll/scroll.vue" />
-      <change beforePath="$PROJECT_DIR$/src/common/js/dom.js" afterPath="$PROJECT_DIR$/src/common/js/dom.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,10 +30,12 @@
       <file leaf-file-name="listview.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/base/listview/listview.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="103" column="12" lean-forward="false" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+            <state relative-caret-position="308">
+              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding>
-                <element signature="e#3636#4173#0" expanded="false" />
+                <element signature="n#div#1;n#scroll#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#1137#1176#0" expanded="true" />
+                <element signature="e#4435#4972#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="scroll.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/base/scroll/scroll.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
+            <state relative-caret-position="848">
               <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
@@ -71,6 +71,9 @@
       <find>probeType</find>
       <find>_scrollTo</find>
       <find>onShortcutTouchStart</find>
+      <find>shortcutList</find>
+      <find>fixedTitle</find>
+      <find>list-fixed</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,13 +164,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="vue-study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="scroll" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -232,12 +228,12 @@
       <workItem from="1527682356768" duration="3940000" />
       <workItem from="1528026178002" duration="2752000" />
       <workItem from="1528197338990" duration="21000" />
-      <workItem from="1528206951228" duration="1632000" />
+      <workItem from="1528206951228" duration="3618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66942000" />
+    <option name="totallyTimeSpent" value="68928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -295,7 +291,9 @@
         <state relative-caret-position="315">
           <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
           <folding>
-            <element signature="e#3636#4173#0" expanded="false" />
+            <element signature="n#div#1;n#scroll#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#1137#1176#0" expanded="true" />
+            <element signature="e#4435#4972#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -568,14 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/singer/singer.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/js/dom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
@@ -613,18 +603,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/base/scroll/scroll.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
+        <state relative-caret-position="848">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/singer/singer.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/base/listview/listview.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="103" column="12" lean-forward="false" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
+        <state relative-caret-position="308">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
           <folding>
-            <element signature="e#3636#4173#0" expanded="false" />
+            <element signature="n#div#1;n#scroll#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#1137#1176#0" expanded="true" />
+            <element signature="e#4435#4972#0" expanded="false" />
           </folding>
         </state>
       </provider>
