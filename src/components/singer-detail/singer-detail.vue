@@ -5,7 +5,38 @@
 </template>
 
 <script>
-export default {}
+import {getSingerDetail} from 'api/singer'
+import {ERR_OK} from 'api/config'
+import {mapGetters} from 'vuex'
+
+export default {
+  data () {
+    return {
+      songs: []
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'singer'
+    ])
+  },
+  created () {
+    this._getDetail()
+  },
+  methods: {
+    _getDetail () {
+      if (!this.singer.id) {
+        this.$router.push('/singer')
+        return
+      }
+      getSingerDetail(this.singer.id).then((res) => {
+        if (res.code === ERR_OK) {
+          this.songs = res.data.list
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
