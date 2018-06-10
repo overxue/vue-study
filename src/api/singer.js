@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueJsonp from 'vue-jsonp'
 import {commonParams, options} from './config'
+import axios from 'axios'
 Vue.use(VueJsonp)
 
 export function getSingerList () {
@@ -31,4 +32,26 @@ export function getSingerDetail (singerId) {
     singermid: singerId
   })
   return Vue.jsonp(url, data)
+}
+
+export function getPurlUrl (mid) {
+  const url = '/api/getPurlUrl'
+  const data = Object.assign({}, commonParams, {
+    songmid: mid,
+    loginUin: 0,
+    hostUin: 0,
+    format: 'json',
+    platform: 'yqq',
+    needNewCode: 0,
+    cid: 205361747,
+    uin: 0,
+    guid: 3176168986,
+    filename: `C400${mid}.m4a`,
+    g_tk: 5381
+  })
+  return axios.get(url, {
+    params: data
+  }).then((res) => {
+    return Promise.resolve(res.data)
+  })
 }

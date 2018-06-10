@@ -1,6 +1,6 @@
 export const singer = state => state.singer
 
-export const play = state => state.play
+export const playing = state => state.playing
 
 export const fullScreen = state => state.fullScreen
 
