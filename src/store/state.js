@@ -14,7 +14,9 @@ const state = {
   // 播放模式
   mode: playMode.sequence,
   // 当前播放索引
-  currentIndex: -1
+  currentIndex: -1,
+  // 歌单
+  disc: {}
 }
 
 export default state
