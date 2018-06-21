@@ -46,8 +46,7 @@ export function getPurlUrl (mid) {
     cid: 205361747,
     uin: 0,
     guid: 3176168986,
-    filename: `C400${mid}.m4a`,
-    g_tk: 5381
+    filename: `C400${mid}.m4a`
   })
   return axios.get(url, {
     params: data
