@@ -1,4 +1,5 @@
 import {playMode} from 'common/js/config'
+import {loadSearch} from 'common/js/cache'
 
 const state = {
   // 歌手数据
@@ -18,7 +19,9 @@ const state = {
   // 歌单
   disc: {},
   // 排行数据
-  topList: {}
+  topList: {},
+  // 搜索历史
+  searchHistory: loadSearch()
 }
 
 export default state
